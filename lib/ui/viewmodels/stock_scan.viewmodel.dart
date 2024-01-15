@@ -12,14 +12,8 @@ class StockScanViewModel {
 
   final StockScanRepository _repository;
 
-  // Result use case No.1
-  List<StockScanModel>? _news;
-
-  List<StockScanModel>? get news => _news;
-
   Future<List<StockScanModel>?> fetchScans() async {
     List<StockScanModel>? scans = await _repository.getScans();
-    // Map<String, VariableModel>? variables
     List<StockScanModel>? scanFlatlist = scans?.map((scan) {
       Map<String, VariableModel> variables = {};
 
